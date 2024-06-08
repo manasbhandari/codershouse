@@ -133,6 +133,10 @@ export const useWebRTC = (roomId, user) => {
             sessionDescription: offer,
           });
         }
+
+        
+
+
       }
       async function handleRemovePeer({ peerId, userId }) {
         // Correction: peerID to peerId
@@ -153,7 +157,7 @@ export const useWebRTC = (roomId, user) => {
         peerId,
         sessionDescription: remoteSessionDescription,
       }) {
-        connections.current[peerId].setRemoteDescription(
+        await connections.current[peerId].setRemoteDescription(
           new RTCSessionDescription(remoteSessionDescription)
         );
 
@@ -162,7 +166,7 @@ export const useWebRTC = (roomId, user) => {
           const connection = connections.current[peerId];
 
           const answer = await connection.createAnswer();
-          connection.setLocalDescription(answer);
+          await connection.setLocalDescription(answer);
 
           socket.current.emit(ACTIONS.RELAY_SDP, {
             peerId,
