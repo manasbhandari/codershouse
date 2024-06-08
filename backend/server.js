@@ -1,4 +1,4 @@
-const dotenv = require("./dotenv");
+const dotenv = require("../dotenv");
 const express = require("express");
 const app = express();
 const router = require("./routes");
@@ -13,7 +13,7 @@ dotenv.config();
 
 const io = require("socket.io")(server , {
   cors: {
-    origin: "http://localhost:3000",
+    origin: process.env.SOCKET_IO_CORS_ORIGIN || "http://localhost:3000",
     methods: ["GET", "POST"]
   }
 });
@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 const corsOption = {
   credentials: true,
-  origin: ["http://localhost:3000"],
+  origin: [process.env.SOCKET_IO_CORS_ORIGIN],
 };
 
 app.use(cors(corsOption));
