@@ -16,7 +16,7 @@ const Home = () => {
 
   const navigate = useNavigate();
   function startRegister() {
-    navigate('/register');
+    navigate('/authenticate');
   }
 
 
@@ -28,11 +28,11 @@ const Home = () => {
       We are working hard to get Codershouse ready for everyone! While we wrap up the finishing youches, we are adding people gradually to make sure nothing breaks 
       </p>
       <div>
-        <Button onClick={startRegister} text="Get your username" />
+        <Button onClick={startRegister} text="Let's go " />
       </div>
       <div className={styles.signinWrapper}>
         <span className={styles.hasInvite}>Have an invite text ?</span>
-        <Link style={signinLinkStyle} to="/login">Signin</Link>
+        {/* <Link style={signinLinkStyle} to="/login">Signin</Link> */}
       </div> 
 
       </Card>
