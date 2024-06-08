@@ -6,8 +6,10 @@ const DbConnect = require("./database");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const ACTIONS = require("./actions");
+const path = require("path");
 
 const server = require("http").createServer(app);
+dotenv.config();
 
 const io = require("socket.io")(server , {
   cors: {
