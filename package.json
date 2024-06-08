@@ -10,5 +10,16 @@
     "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jimp": "^0.22.12",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.2",
+    "socket.io": "^4.7.5",
+    "twilio": "^5.1.0"
+  }
 }
