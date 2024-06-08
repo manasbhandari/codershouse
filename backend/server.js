@@ -1,4 +1,4 @@
-const dotenv = require("../dotenv");
+import dotenv from 'dotenv';
 const express = require("express");
 const app = express();
 const router = require("./routes");
@@ -8,8 +8,10 @@ const cookieParser = require("cookie-parser");
 const ACTIONS = require("./actions");
 const path = require("path");
 
-const server = require("http").createServer(app);
 dotenv.config();
+
+const server = require("http").createServer(app);
+
 
 const io = require("socket.io")(server , {
   cors: {
